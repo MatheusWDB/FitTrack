@@ -1,4 +1,4 @@
-package br.com.nexfit.frontend
+package com.example.fit_track
 
 import io.flutter.embedding.android.FlutterActivity
 
