@@ -1,3 +1,4 @@
+import 'package:fit_track/pages/register_page.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
@@ -16,18 +17,21 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(
+          title: Text('Login'),
+          centerTitle: true,
+          titleTextStyle: TextStyle(
+            color: Colors.blueAccent,
+            fontSize: 40,
+          ),
+        ),
         body: Center(
-          child: Padding(
-            padding: const EdgeInsets.all(16),
+          child: SingleChildScrollView(
+            padding: EdgeInsets.all(16),
             child: Column(
               mainAxisSize: MainAxisSize.min,
+              spacing: 16.0,
               children: [
-                const Text(
-                  'FitTrack',
-                ),
-                const SizedBox(
-                  height: 96,
-                ),
                 TextField(
                   autofocus: true,
                   controller: emailController,
@@ -41,9 +45,6 @@ class _LoginPageState extends State<LoginPage> {
                       hintStyle: TextStyle(
                         fontWeight: FontWeight.w300,
                       )),
-                ),
-                const SizedBox(
-                  height: 16,
                 ),
                 TextField(
                   obscuringCharacter: '•',
@@ -71,21 +72,23 @@ class _LoginPageState extends State<LoginPage> {
                         fontWeight: FontWeight.w300,
                       )),
                 ),
-                const SizedBox(
-                  height: 16,
-                ),
                 Row(
+                  spacing: 32.0,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     ElevatedButton(
+                      style: ElevatedButton.styleFrom(fixedSize: Size(150, 50)),
                       onPressed: () {},
                       child: const Text('Entrar'),
                     ),
-                    SizedBox(
-                      width: 32,
-                    ),
                     ElevatedButton(
-                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(fixedSize: Size(150, 50)),
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                              builder: (context) => const RegisterPage()),
+                        );
+                      },
                       child: const Text('Cadastrar'),
                     )
                   ],
@@ -96,5 +99,5 @@ class _LoginPageState extends State<LoginPage> {
         ),
       ),
     );
-  }  
+  }
 }

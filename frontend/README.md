@@ -1,6 +1,6 @@
 # fit_track
 
-A new Flutter project.
+Ficha de treino para academias.
 
 ## Getting Started
 
